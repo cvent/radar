@@ -132,7 +132,7 @@ Open API,Adopt,Tools,FALSE,"<p>Open API is how we define specifications for all 
 Swagger,Hold,Tools,FALSE,<p>Swagger is an api definition format for REST services. Swagger is comparable to RAML and is really the first version of OpenAPI. We've consolidated our api definition language on Open API</p>
 webdriver.io,Adopt,Tools,FALSE,<p>webdriver.io is the test automation framework we're using for end to end tests. We prefer this framework because it supports selenium and chromium based workflows that allow for speed as well as comprehensive coverage across all the browsers that our products support</p>
 jest,Adopt,Tools,FALSE,<p>Jest is the unit testing tool we use for typescript/javascript based projects at Cvent. We also leverage jest for integration tests when it makes sense</p>
-enzyme,Hold,Tools,FALSE,<p>Enzyme is widely at Cvent for React unit testing, but it has been poorly maintained for several years and looks unlikely to ever support React >17</p>
+enzyme,Hold,Tools,FALSE,<p>Enzyme is widely at Cvent for React unit testing, but it has been poorly maintained for several years and looks unlikely to ever support React past version 17</p>
 react-testing-library,Adopt,Tools,FALSE,<p>The defacto standard tool for React unit testing</p>
 junit,Adopt,Tools,FALSE,<p>JUnit is the unit testing tool we use for java projects at Cvent</p>
 appium,Adopt,Tools,FALSE,<p>A test automation tool used for mobile tests</p>
