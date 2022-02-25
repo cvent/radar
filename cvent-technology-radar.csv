@@ -47,7 +47,7 @@ AWS AppSync,Hold,Platforms,TRUE,"<p>A managed graphql service that we tried out 
 AWS RDS Postgres,Hold,Platforms,FALSE,<p>A managed relational database offering for Postgres. We're putting this on hold as we've already began our migration to Aurora postgres</p>
 AWS Aurora Postgres,Adopt,Platforms,TRUE,"<p>A managed relational database offering based on the Aurora storage engine but with Postgres compatibility. This allows us to easily scale out read slaves, auto-failover, 5x performance gains and more</p>"
 AWS EventBridge,Trial,Platforms,TRUE,"<p>We've currently deployed Event Bridge as a trial to replace our use of RabbitMQ as a message bus for Cvent. This is a serverless offering that allows us to easily integrate AWS natvie solutions, pay for what you use and no maintenance</p>"
-AWS S3,Adopt,Platforms,TRUE,"<p>We store all things in S3 (assets, deployments, backups, customer data and more). S3 is one of the greatest databases of all time!</p>"
+AWS S3,Adopt,Platforms,TRUE,"<p>Static asset hosting (often in combination with Cloudfront) and storage of large documents and files. Less flexible querying capabilities and higher latency than Couchbase, but supports larger documents.</p>"
 AWS API Gateway,Adopt,Platforms,FALSE,"<p>Our primary API ingest point for all public facing APIs. This serverless platform allows us to throttle, cache apis and provide a unified interface to our customers. We also leverage it heavily for custom domains where our customers want a complete whitelabeled experience</p>"
 Browser Stack,Adopt,Platforms,FALSE,<p>This is the selenium based browser testing platform we use to test/validate multiple browser versions against our products</p>
 New Relic,Hold,Platforms,FALSE,"<p>New Relic has primarily been an APM and browser tool that we've leveraged over the years to gain performance insights, errors and synthetic monitoring. As datadog has expanded it's capabilities we plan to migrate over time from New Relic to Datadog to unify under a single platform</p>"
@@ -132,6 +132,8 @@ Open API,Adopt,Tools,FALSE,"<p>Open API is how we define specifications for all 
 Swagger,Hold,Tools,FALSE,<p>Swagger is an api definition format for REST services. Swagger is comparable to RAML and is really the first version of OpenAPI. We've consolidated our api definition language on Open API</p>
 webdriver.io,Adopt,Tools,FALSE,<p>webdriver.io is the test automation framework we're using for end to end tests. We prefer this framework because it supports selenium and chromium based workflows that allow for speed as well as comprehensive coverage across all the browsers that our products support</p>
 jest,Adopt,Tools,FALSE,<p>Jest is the unit testing tool we use for typescript/javascript based projects at Cvent. We also leverage jest for integration tests when it makes sense</p>
+enzyme,Hold,Tools,FALSE,<p>Enzyme is widely at Cvent for React unit testing, but it has been poorly maintained for several years and looks unlikely to ever support React >17</p>
+react-testing-library,Adopt,Tools,FALSE,<p>The defacto standard tool for React unit testing</p>
 junit,Adopt,Tools,FALSE,<p>JUnit is the unit testing tool we use for java projects at Cvent</p>
 appium,Adopt,Tools,FALSE,<p>A test automation tool used for mobile tests</p>
 Gatling,Adopt,Tools,FALSE,<p>Gatling is a load testing tool that we leverage to perform load testing of all our microservices</p>
