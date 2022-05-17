@@ -7,7 +7,7 @@ C#,Hold,languages-and-frameworks,FALSE,"<p>C# is the language used to develop si
 JavaScript,Hold,languages-and-frameworks,FALSE,<p>JavaScript is used widely and is the only option for executing code in the browser (outside of webassembly). We're beginning our pivot to TypeScript and are recommending teams stop doing new development in JavaScript while slowly beginning to convert existing codebases over to TypeScript</p>
 TypeScript,Adopt,languages-and-frameworks,FALSE,"<p>TypeScript is where we're putting a lot of our investment (React, CDK, NextJS). We're encouraging all developers to learn this language and are adopting this as our default language for many components within our technology stack</p>"
 Swift,Adopt,languages-and-frameworks,FALSE,<p>Swift is used when we need native capabilities on iOS that isn't supported by React Native</p>
-Python,Adopt,languages-and-frameworks,FALSE,"<p>Python is primarily used for scripting, data science and lambda functions where appropriate</p>"
+Python,Hold,languages-and-frameworks,FALSE,"<p>Python is primarily used for scripting, data science and lambda functions where appropriate but the preference is to use TypeScript where possible</p>"
 Objective C,Hold,languages-and-frameworks,FALSE,<p>Use Swift instead</p>
 Scala,Hold,languages-and-frameworks,FALSE,<p>Used as a DSL for gatling load tests today but should generally stay close to primary languages of Java/TypeScript when possible</p>
 Kotlin,Adopt,languages-and-frameworks,FALSE,<p>Kotlin is used when we need native capabilities on Android that isn't supported by React Native</p>
