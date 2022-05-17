@@ -14,7 +14,7 @@ Kotlin,Adopt,languages-and-frameworks,FALSE,<p>Kotlin is used when we need nativ
 Bash,Hold,languages-and-frameworks,FALSE,<p>A scripting glue language used only as a last resort</p>
 AWS CDK,Adopt,languages-and-frameworks,TRUE,<p>The CDK is our primary infrastructure as code platform. It provides an imperative model that lends itself to sharing reusable/sharable/testable components across Cvent for building infrastructure and serverless applications on AWS</p>
 Dropwizard,Adopt,languages-and-frameworks,FALSE,<p>Our primary microservices framework for Cvent</p>
-CDF,Adopt,languages-and-frameworks,TRUE,<p>CDF (Cvent Development Framework) is a framework for designing\, building\, deploying infrastructure\, web applications\, mobile applications and services at Cvent.</p>
+CDF,Adopt,languages-and-frameworks,TRUE,"<p>CDF (Cvent Development Framework) is a framework for designing, building, deploying infrastructure, web applications, mobile applications and services at Cvent.</p>"
 Docusaurus,Hold,languages-and-frameworks,TRUE,<p>A documentation platform that we experimented with for a few months. We abandoned it because we've been able to achieve the same features within CDF.</p>
 ReactJS,Adopt,languages-and-frameworks,FALSE,<p>Our primary UI framework for the web</p>
 React Native,Adopt,languages-and-frameworks,TRUE,<p>Our primary UI framework for mobile</p>
