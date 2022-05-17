@@ -14,11 +14,11 @@ Kotlin,Adopt,languages-and-frameworks,FALSE,<p>Kotlin is used when we need nativ
 Bash,Hold,languages-and-frameworks,FALSE,<p>A scripting glue language used only as a last resort</p>
 AWS CDK,Adopt,languages-and-frameworks,TRUE,<p>The CDK is our primary infrastructure as code platform. It provides an imperative model that lends itself to sharing reusable/sharable/testable components across Cvent for building infrastructure and serverless applications on AWS</p>
 Dropwizard,Adopt,languages-and-frameworks,FALSE,<p>Our primary microservices framework for Cvent</p>
-NX,Adopt,languages-and-frameworks,TRUE,<p>Our primary web application framework for Cvent</p>
-Docusaurus,Hold,languages-and-frameworks,TRUE,<p>A documentation platform that we experimented with for a few months. We abandoned it because we've been able to achieve the same features within NX.</p>
+CDF,Adopt,languages-and-frameworks,TRUE,<p>CDF (Cvent Development Framework) is a framework for designing, building, deploying infrastructure, web applications, mobile applications and services at Cvent.</p>
+Docusaurus,Hold,languages-and-frameworks,TRUE,<p>A documentation platform that we experimented with for a few months. We abandoned it because we've been able to achieve the same features within CDF.</p>
 ReactJS,Adopt,languages-and-frameworks,FALSE,<p>Our primary UI framework for the web</p>
 React Native,Adopt,languages-and-frameworks,TRUE,<p>Our primary UI framework for mobile</p>
-NextJS,Adopt,languages-and-frameworks,TRUE,<p>NextJS is the core web application framework that ships as part of NX</p>
+NextJS,Adopt,languages-and-frameworks,TRUE,<p>NextJS is the core web application framework that ships as part of CDF</p>
 Carina,Adopt,languages-and-frameworks,FALSE,<p>The Cvent design system for building beautiful UIs</p>
 Nucleus,Adopt,languages-and-frameworks,FALSE,<p>A set of shared UI packages for building products</p>
 Site Designer,Adopt,languages-and-frameworks,FALSE,<p>A framework for exposing customizable web applications to end users based on Nucleus</p>
@@ -29,7 +29,7 @@ Quarkus,Assess,languages-and-frameworks,TRUE,<p>A new modern microservices frame
 Helidon,Assess,languages-and-frameworks,TRUE,<p>A new modern microservices framework we're experimenting with as a potential replacement for Dropwizard</p>
 Phrase App,Adopt,languages-and-frameworks,FALSE,<p>A localization framework we're leveraging to localize our products</p>
 .Net Core,Assess,languages-and-frameworks,TRUE,<p>A modern runtime for .Net that can run on windows/linux/docker. We're doing some experimentation on this runtime to see what can be migrated to this where appropriate</p>
-Apollo,Adopt,languages-and-frameworks,TRUE,<p>Apollo is the core graphql framework that ships as part of NX</p>
+Apollo,Adopt,languages-and-frameworks,TRUE,<p>Apollo is the core graphql framework that ships as part of CDF</p>
 Reporting,Adopt,Platforms,FALSE,<p>The reporting platform provides all of the components necessary to produce nice looking reports for our customers as embedded experiences that unify Cvent products</p>
 Couchbase,Adopt,Platforms,FALSE,<p>A document database used for storing JSON data. Couchbase is also used as a distributed cache for some of our most latency intensive applications like auth</p>
 RabbitMQ,Adopt,Platforms,FALSE,<p>A message bus for handling asynchronous communication across Cvent</p>
@@ -37,13 +37,13 @@ AWS Managed RabbitMQ,Assess,Platforms,TRUE,<p>We're in the early stages of movin
 Elasticsearch,Hold,Platforms,FALSE,<p>See AWS Elasticsearch Service as we've deprecated our use of running Elasticsearch ourselves</p>
 AWS Elasticsearch Service,Adopt,Platforms,TRUE,"<p>A managed elasticsearch service provides all of the functionality of elasticsearch plus additional security controls. This helps ease the burden of scaling up/down, patching, upgrading and maintaining this platform</p>"
 AWS ECS/EC2,Adopt,Platforms,FALSE,"<p>Our primary docker container orchestration platform. Using EC2 we're able to leverage spot instances, mixed clusters, specialized disk mounted volumes, gpus and more</p>"
-AWS ECS/Fargate,Adopt,Platforms,TRUE,<p>We're in the phase of trying out Fargate as our primary docker container orchestration platform. This should allow us to reduce costs as well as easing the burden of maintaining several clusters across Cvent. NX applications are deployed to Fargate.</p>
+AWS ECS/Fargate,Adopt,Platforms,TRUE,<p>We're in the phase of trying out Fargate as our primary docker container orchestration platform. This should allow us to reduce costs as well as easing the burden of maintaining several clusters across Cvent. CDF applications are deployed to Fargate.</p>
 AWS Lambda,Trial,Platforms,TRUE,"<p>We continue to push out use cases leveraging Lamba across Cvent, but have held back using Lambda for synchronous communication that is directly customer facing due to hard limits on concurrent execution. We continue to use Lambda for asychronous native integrations with AWS services as well as exploring ways to leverage provisioned concurrency + autoscaling to alleviate the burden of Lambda concurrency limits</p>"
 Jenkins,Adopt,Platforms,FALSE,<p>Jenkins is our primary CI/CD tool</p>
 Harness,Assess,Platforms,TRUE,<p>We're in the early phases of experimenting with Harness as a CD platform to replace Octo and Jenkins. One of our primary goals is full blue/green canary deployments</p>
 Octopus,Adopt,Platforms,FALSE,<p>Our primary deployment orchestrator for staging and above</p>
 AWS Codebuild,Adopt,Platforms,TRUE,<p>Our primary jenkins worker nodes for execution of CI/CD builds</p>
-AWS AppSync,Hold,Platforms,TRUE,"<p>A managed graphql service that we tried out with our initial versions of NX. However, we've discovered several areas of concerns centered around Lambda limits and developer experience so we've abandoned our use of AppSync and have since moved to Apollo</p>"
+AWS AppSync,Hold,Platforms,TRUE,"<p>A managed graphql service that we tried out with our initial versions of CDF. However, we've discovered several areas of concerns centered around Lambda limits and developer experience so we've abandoned our use of AppSync and have since moved to Apollo</p>"
 AWS RDS Postgres,Hold,Platforms,FALSE,<p>A managed relational database offering for Postgres. We're putting this on hold as we've already began our migration to Aurora postgres</p>
 AWS Aurora Postgres,Adopt,Platforms,TRUE,"<p>A managed relational database offering based on the Aurora storage engine but with Postgres compatibility. This allows us to easily scale out read slaves, auto-failover, 5x performance gains and more</p>"
 AWS EventBridge,Trial,Platforms,TRUE,"<p>We've currently deployed Event Bridge as a trial to replace our use of RabbitMQ as a message bus for Cvent. This is a serverless offering that allows us to easily integrate AWS natvie solutions, pay for what you use and no maintenance</p>"
@@ -64,7 +64,7 @@ AWS AppMesh,Assess,Platforms,TRUE,"<p>AWS AppMesh is a network routing service w
 AWS CloudMap,Assess,Platforms,TRUE,<p>AWS CloudMap is a service discovery platform that is often used along with AppMesh to help with the dynamic nature of discovering how to communicate with a given service</p>
 AWS Amplify,Hold,Platforms,TRUE,"<p>AWS amplify is a great tool for prototyping and getting started quickly. However, we've found that the magic winds up getting in the way once you need to start making updates to applications as they evolve over time. We prefer AWS CDK instead.</p>"
 AWS CloudFormation,Adopt,Platforms,FALSE,<p>AWS Cloudformation is a declarative infrastructure as code platform that we leverage to provision shared infrastructure code components. Most of our use cases for Cloudformation have moved over to AWS CDK but Cloudformation is really the underlying assembly language for infrastructure as code at AWS</p>
-AWS Elasticache,Trial,Platforms,TRUE,<p>We're currently trying to leverage elasticache/redis as the backend for graphql subscriptions in our NX framework. We hope to expand our use of this into distributed cache use cases as well</p>
+AWS Elasticache,Trial,Platforms,TRUE,<p>We're currently trying to leverage elasticache/redis as the backend for graphql subscriptions in our CDF framework. We hope to expand our use of this into distributed cache use cases as well</p>
 MS SQL Server,Hold,Platforms,FALSE,"<p>MS SQL Server is one of the largest databases we use at Cvent today and is the primary relational database used behind large parts of app.cvent.com and related components. However, as we evolve we're putting a hold on continued expansion and use of this database as we prefer our relational databases move to AWS Aurora</p>"
 AWS RDS MySQL,Hold,Platforms,FALSE,"<p>MySQL is another database we leverage only in circumstances that make sense, but in most cases we push for AWS Aurora</p>"
 Oracle,Hold,Platforms,FALSE,"<p>Oracle is another database leveraged heavily by Passkey, Conference and Business Transient product lines. However, as we continue to evolve we want to limit our investment in expanding the use of this database and leverage AWS Aurora</p>"
