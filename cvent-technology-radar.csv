@@ -73,7 +73,7 @@ AWS Kinesis Video Streams,Assess,Platforms,TRUE,<p>KVS is a video streaming comp
 AWS EMR,Trial,Platforms,TRUE,<p>EMR is a service we're experimenting with as part of the data dev team</p>
 AWS Lakeformation,Trial,Platforms,TRUE,<p>Lakeformation is a service we're experimenting with as part of the data dev team</p>
 Snowflake,Trial,Platforms,TRUE,<p>Snowflake is a service we're experimenting with as part of the data dev team</p>
-AWS MSK,Adopt,Platforms,TRUE,<p>Manged Kafka is what we're using to run kafka behind the ix-engine. This helps relieve some of the burden of maintaining this platform</p>
+AWS MSK,Hold,Platforms,TRUE,<p>Manged Kafka is what we're using to run kafka behind the ix-engine. This helps relieve some of the burden of maintaining this platform</p>
 Vormetric,Hold,Platforms,FALSE,<p>Vormetric is the platform we leverage for encryption of data at rest and field level encryption. This platform is currently only leveraged in our on-prem datacenter but will soon be transitioned to AWS. It will be short lived in AWS as we replace the need for this platform with KMS in 2022</p>
 Chef,Hold,Platforms,FALSE,<p>Chef is the configuration managment tool we leverage to configure/install software throughout Cvent. Overtime we're slowly starting to replace Chef with pre-baked AMIs and immutable infrastructure</p>
 AWS CloudFront,Adopt,Platforms,FALSE,<p>Cloudfront is the CDN we're using to cache assets and data at the edge.</p>
