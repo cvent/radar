@@ -1,4 +1,5 @@
 name,ring,quadrant,isNew,description
+TailwindCSS,Trial,languages-and-frameworks,TRUE,<p>Tailwind CSS is a utility-based CSS framework, designed to rapidly develop modern websites. With Tailwind, developers can seamlessly build web applications without having to leave their HTML, making styling more efficient and streamlined. We are exploring the possibility of integrating Tailwind as our primary framework for application styling. </p>
 Java,Adopt,languages-and-frameworks,FALSE,<p>Java is the language we use at Cvent to develop microservices and backend applications</p>
 AWS SQS,Trial,Platforms,TRUE,<p>We're looking to leverage SQS as a serverless replacement for many of the RabbitMQ use cases</p>
 AWS DynamoDB,Trial,Platforms,TRUE,<p>We're looking to leverage DynamoDB as a serverless replacement for many Couchbase use cases</p>
