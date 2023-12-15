@@ -1,2 +1,145 @@
 name,ring,quadrant,isNew,description
 .Net Core,Adopt,languages-and-frameworks,TRUE,<p>A modern runtime for .Net that can run on windows/linux/docker.</p>
+Agile,Adopt,Techniques,FALSE,<p>Cvent has been an agile software development company for years. We have teams building software following scrum, kanban and a variety of methods depending on the need</p>,,,
+apex.sh,Hold,Tools,FALSE,<p>We experimented with apex early on as way to manage our adoption of serverless on AWS. While it worked well for prototyping, it failed when it comes to security/compliance and flexibility. Instead, we've deferred to leveraging AWS CDK</p>,,
+API First Design,Adopt,Techniques,FALSE,<p>Cvent believes strongly in API First Design because it allows for iteration during the design phase. Getting the interface correct is the most important part of software development/design. We expect all APIs development to spend most of their time at this phase of development.</p>
+Apollo,Adopt,languages-and-frameworks,FALSE,<p>Apollo is the core graphql framework that ships as part of CDF</p>
+appium,Adopt,Tools,FALSE,<p>A test automation tool used for mobile tests</p>
+applitools,Adopt,Tools,FALSE,<p>Applitools allows us to run e2e test automation and easily identify visual failures as they occur</p>
+asdf,Adopt,Tools,FALSE,<p>A version manager for tools leveraged to build/deploy various projects.</p>
+Atlassian Changeset,Adopt,Tools,FALSE,<p>Atlassian Changesets is a newer tool we're leveraging in our release process to handle semantic versioning and generate CHANGELOGs automatically</p>
+AWS Amplify,Hold,Platforms,FALSE,<p>AWS amplify is a great tool for prototyping and getting started quickly. However, we've found that the magic winds up getting in the way once you need to start making updates to applications as they evolve over time. We prefer AWS CDK instead.</p>,,,
+AWS API Gateway,Adopt,Platforms,FALSE,<p>Our primary API ingest point for all public facing APIs. This serverless platform allows us to throttle, cache apis and provide a unified interface to our customers. We also leverage it heavily for custom domains where our customers want a complete whitelabeled experience</p>,,,
+AWS AppMesh,Hold,Platforms,FALSE,<p>AWS AppMesh is a network routing service we're continuing to explore to see if it can provide the features we want such as (secure data in-transit, circuit breaker, retry, routing) and to see if it could help reduce the costs of deploying so many application load balancers. AWS has since launched ECS Service Connect and VPC Lattice which we believe will be better options going forward.</p>,
+AWS AppSync,Hold,Platforms,FALSE,<p>A managed graphql service that we tried out with our initial versions of CDF. However, we've discovered several areas of concerns centered around Lambda limits and developer experience so we've abandoned our use of AppSync and have since moved to Apollo</p>,,,
+AWS Aurora Postgres,Adopt,Platforms,FALSE,<p>A managed relational database offering based on the Aurora storage engine but with Postgres compatibility. This allows us to easily scale out read slaves, auto-failover, 5x performance gains and more</p>,,
+AWS CDK,Adopt,languages-and-frameworks,FALSE,<p>The CDK is our primary infrastructure as code platform. It provides an imperative model that lends itself to sharing reusable/sharable/testable components across Cvent for building infrastructure and serverless applications on AWS</p>
+AWS CloudFormation,Adopt,Platforms,FALSE,<p>AWS Cloudformation is a declarative infrastructure as code platform that we leverage to provision shared infrastructure code components. Most of our use cases for Cloudformation have moved over to AWS CDK but Cloudformation is really the underlying assembly language for infrastructure as code at AWS</p>
+AWS CloudFront,Adopt,Platforms,FALSE,<p>Cloudfront is the CDN we're using to cache assets and data at the edge.</p>
+AWS CloudMap,Assess,Platforms,FALSE,<p>AWS CloudMap is a service discovery platform that is often used along with AppMesh to help with the dynamic nature of discovering how to communicate with a given service</p>
+AWS Codebuild,Adopt,Platforms,FALSE,<p>Our primary jenkins worker nodes for execution of CI/CD builds</p>
+AWS Codedeploy,Adopt,Platforms,FALSE,<p>AWS Codedeploy is a tool we ship as part of CDF to facilitate deployments with blue/green CI/CD.</p>
+AWS Codepipeline,Assess,Platforms,FALSE,<p>AWS Codepipeline is a tool that we continue to experiment with and assess to see if we can provide a completely native aws CI/CD process with all the features we want </p>
+AWS Comprehend,Assess,Platforms,FALSE,<p>The AWS Comprehend service has been experimented with for sentiment analysis and automatic catorization of data from user generated content like survey responses. There have been a few hackathon projects that have also experimented with this service but we haven't found the right use of this service in our products yet</p>
+AWS DynamoDB,Adopt,Platforms,FALSE,<p>We leverage DynamoDB as a serverless database option for certain use cases.</p>
+AWS ECR,Adopt,Platforms,FALSE,<p>AWS ECR is a managed service for hosting our docker images that are used to deploy to AWS ECS</p>
+AWS ECS/EC2,Adopt,Platforms,FALSE,<p>Our primary docker container orchestration platform. Using EC2 we're able to leverage spot instances, mixed clusters, specialized disk mounted volumes, gpus and more</p>,
+AWS ECS/Fargate,Adopt,Platforms,FALSE,<p>We're in the phase of trying out Fargate as our primary docker container orchestration platform. This should allow us to reduce costs as well as easing the burden of maintaining several clusters across Cvent. CDF applications are deployed to Fargate.</p>
+AWS Elasticache,Adopt,Platforms,FALSE,<p>We leverage Elasticache/redis in our CDF applications and other places as a fast cache. This can be used to replace many use cases of Couchbase at Cvent.</p>
+AWS EMR,Trial,Platforms,FALSE,<p>EMR is a service we're experimenting with as part of the data dev team</p>
+AWS EventBridge,Atopt,Platforms,FALSE,<p>Event Bridge is now a key part of our event driven architecture at Cvent.</p>
+AWS Kinesis Video Streams,Hold,Platforms,FALSE,<p>KVS is a video streaming component of Kinesis that helps with streaming of video. We've began investigating how this service could be useful throughout our attendee hub product lines</p>
+AWS Kinesis,Assess,Platforms,FALSE,<p>Kinesis is a streaming platform that we're experimenting with in order to stream data from point A to point B, C, D</p>,,
+AWS Lakeformation,Trial,Platforms,FALSE,<p>Lakeformation is a service we're experimenting with as part of the data dev team</p>
+AWS Lambda,Adopt,Platforms,FALSE,<p>Use Lambda as a compute option to execute business logic when appropriate.</p>
+AWS MSK,Adopt,Platforms,FALSE,<p>Manged Kafka is what we're using to run kafka behind the ix-engine. This helps relieve some of the burden of maintaining this platform</p>
+AWS OpenSearch,Adopt,Platforms,FALSE,<p>A managed aws search service provides all of the functionality of elasticsearch plus additional security controls. This helps ease the burden of scaling up/down, patching, upgrading and maintaining this platform</p>,,
+AWS RDS MySQL,Hold,Platforms,FALSE,<p>MySQL is another database we leverage only in circumstances that make sense, but in most cases we push for AWS Aurora</p>,,,
+AWS RDS Postgres,Hold,Platforms,FALSE,<p>A managed relational database offering for Postgres. We're putting this on hold as we've already began our migration to Aurora postgres</p>
+AWS Route53,Adopt,Platforms,FALSE,<p>Route53 is our primary DNS provider for most domains at Cvent</p>
+AWS S3,Adopt,Platforms,FALSE,<p>Static asset hosting (often in combination with Cloudfront) and storage of large documents and files. Less flexible querying capabilities and higher latency than Couchbase, but supports larger documents.</p>,,,
+AWS SAM,Hold,Tools,FALSE,<p>AWS serverless application model (SAM) is another declarative approach to infrastructure as code, targetted at serverless to reduce boilerplate and improve on the developer experience. However, we've found it only works well in very isolated use cases and isn't flexible enough to work for longer term enterprise applications</p>,,
+AWS SQS,Adopt,Platforms,FALSE,<p>We leverage SQS as a serverless component of our event driven architecture.</p>
+Axe,Adopt,Tools,FALSE,<p>Axe is a tool integrated to both Blucumber and WDIO. Axe is an accessibility testing engine for websites and other HTML-based user interfaces. It's fast, secure, lightweight, and was built to seamlessly integrate with any existing test environment so you can automate accessibility testing alongside your regular functional testing.</p>,
+Bash,Hold,languages-and-frameworks,FALSE,<p>A scripting glue language used only as a last resort</p>
+bit.dev,Assess,Platforms,FALSE,<p>We've began investigating bit.dev as a platform for managing all our UI dependencies as part of an end to end component ecosystem to make it easier to manage</p>
+Blucumber,Hold,Tools,FALSE,<p>Blucumber is an internal Cvent tool used for building/running selenium based test automation on our legacy applications. For newer applications we're favoring webdriver.io</p>
+Browser Stack,Adopt,Platforms,FALSE,<p>This is the selenium based browser testing platform we use to test/validate multiple browser versions against our products</p>
+C#,Adopt,languages-and-frameworks,FALSE,<p>C# is the language used to develop significant parts of app.cvent.com (ie. Normandy, Legacy, Core).</p>,,
+Carina,Adopt,languages-and-frameworks,FALSE,<p>The Cvent design system for building beautiful UIs</p>
+CDF,Adopt,languages-and-frameworks,FALSE,<p>CDF (Cvent Development Framework) is a framework for designing, building, deploying infrastructure, web applications, mobile applications and services at Cvent.</p>
+cfn-lint,Adopt,Tools,FALSE,<p>The cfn-lint tool allows us to enforce best practices and security rules around all our cloudformation infrastructure as code. This tool is mandated by our build/deploy pipelines (CDK or native cloudformation)</p>
+Checkmarx,Adopt,Platforms,FALSE,<p>Checkmarx is a tool we leverage to scan our source code during CI/CD for security vulnerabilities</p>
+Chef,Adopt,Platforms,FALSE,<p>Chef is the configuration managment tool we leverage to configure/install software throughout Cvent. Overtime we're slowly starting to replace Chef with pre-baked AMIs and immutable infrastructure</p>
+Clover,Hold,Tools,FALSE,<p>A java code coverage tool that we've stopped using because it operates on source code and didn't support java 11 when we moved away. We recommend jacoco instead</p>
+Cobertura,Hold,Tools,FALSE,<p>A java code coverage tool that we've depreacated in favor of jacoco because of it's support by the community, support for java 11, integrations with IDEs and more</p>,,
+Couchbase Mobile,Hold,Platforms,FALSE,<p>Couchbasae mobile is the local database + sync technology we're using for project Falcon. It allows developers on device to read/write data as-if the database is always online and local while handling the syncing of data as network becomes available.</p>
+Couchbase,Hold,Platforms,FALSE,<p>We prefer that teams now use modern cloud native database systems and serverless where possible</p>
+Creators,Adopt,Tools,FALSE,<p>Creators is a tool that allows someone to get started quickly on a new project using the latest paved road technologies.</p>
+Dagger,Assess,Tools,FALSE,<p>Dagger (https://dagger.io/) is a devkit built on top of Docker's BuildKit for building portable CI/CD pipelines that can be run on any CI system or locally</p>
+Datadog Logs,Adopt,Platforms,FALSE,<p>Datadog logs is an additional feature of datadlog that provides log aggregation. We're in the early phase of trying out datadog logs as a replacement for splunk logs. The intent right now is for application logs only.</p>
+Datadog,Adopt,Platforms,FALSE,<p>Datadog is our primary tool for capture metrics, APM, monitoring, infrastructure, logs and more. We plan to expand our use of Datadog as we scale down our use of New Relic and Splunk</p>
+Datomic,Hold,Platforms,FALSE,<p>Datomic is a unique database technology that we experimented with and deployed to production for attendee/rfid tracking purposes. We originally wanted to leverage the time based query capabilities of this unique database but have struggled with performance/scale as it comes to write throughput</p>
+Design Documents,Adopt,Techniques,FALSE,<p>Design documents is a fundamental part of SDLC where functional requirements and use cases get translated into a technical design for how we will build a solution. We expect that all teams are building design documents, reviewing them with architects, SRE and leads before writing code</p>,,
+Docker Desktop,Hold,Tools,FALSE,<p>We used docker desktop to run containers on our local machines up until they changed their licensing terms. At this point we recommend using an alternative like Rancher Desktop.</p>
+Docusaurus,Hold,languages-and-frameworks,FALSE,<p>A documentation platform that we experimented with for a few months. We abandoned it because we've been able to achieve the same features within CDF.</p>
+domo,Hold,Platforms,FALSE,<p>We're currently using Domo as part of CEI but on a path to migrate toward other alternatives in 2024.</p>
+Dropwizard,Adopt,languages-and-frameworks,FALSE,<p>Our primary microservices framework for Cvent</p>
+Elasticsearch,Hold,Platforms,FALSE,<p>See AWS OpenSearch Service as we've deprecated our use of running Elasticsearch ourselves on EC2.</p>
+enzyme,Hold,Tools,FALSE,<p>Enzyme is widely at Cvent for React unit testing but it has been poorly maintained for several years and looks unlikely to ever support React past version 17</p>
+Gatling,Adopt,Tools,FALSE,<p>Gatling is a load testing tool that we leverage to perform load testing of all our microservices</p>
+GitHub Actions,Adopt,Tools,TRUE,<p>We're looking to migrate more CI/CD tooling over to GitHub Actions as we look to replace many uses of our internal Jenkins farm.</p>
+GitHub Copilot,Trial,Tools,TRUE,<p>We're looking to launch a technology wide trial of Copilot to help with developer effeciency in 2024.</p>
+GitHub Enterprise,Adopt,Tools,TRUE,<p>We're looking to migrate towards GitHub in 2024.</p>
+GraalVM,Assess,languages-and-frameworks,FALSE,<p>A new JVM runtime that can be used for fast startup time requirements, interop with multiple languages, cli, serverless and more</p>,
+gradle,Hold,Tools,FALSE,<p>A build tool used by the java community with heavy use in the Android community. At Cvent we prefer Maven for a variety of reasons</p>
+Harness,Hold,Platforms,FALSE,<p>We decided not to use Harness as we've pivoted towards other CI/CD solutions.</p>
+Helidon,Hold,languages-and-frameworks,FALSE,<p>We've chosen spring boot as go forward in 2024.</p>
+Hogan,Adopt,Tools,FALSE,<p>Hogan is a combination of a git repo, cli tool and service for managing environment configuration information and credentials. We use this heavily throughout our CI/CD systems to manage configuration for all of the environments we support today</p>,,,
+Jacoco,Adopt,Tools,FALSE,<p>Jacoco is our primary code coverage tool for java projects</p>
+Java,Adopt,languages-and-frameworks,FALSE,<p>Java is the language we use at Cvent to develop microservices and backend applications</p>
+JavaScript,Hold,languages-and-frameworks,FALSE,<p>JavaScript is used widely and is the only option for executing code in the browser (outside of webassembly). We're beginning our pivot to TypeScript and are recommending teams stop doing new development in JavaScript while slowly beginning to convert existing codebases over to TypeScript</p>
+JAWS Screen Reader,Adopt,Tools,FALSE,<p>We leverage JAWS as a screen reader for testing accessibility.</p>
+Jenkins,Adopt,Platforms,FALSE,<p>Jenkins is our primary CI/CD tool</p>
+Jest,Adopt,Tools,FALSE,<p>Jest is the unit testing tool we use for typescript/javascript based projects at Cvent. We also leverage jest for integration tests when it makes sense</p>
+Junit,Adopt,Tools,FALSE,<p>JUnit is the unit testing tool we use for java projects at Cvent</p>
+Karate,Adopt,Tools,FALSE,<p>Karate is a test automation tool we're leveraging heavily for integration tests of all our REST/GraphQL APIs</p>
+Kotlin,Adopt,languages-and-frameworks,FALSE,<p>Kotlin is used when we need native capabilities on Android that isn't supported by React Native</p>
+LaunchDarkly,Trial,Platforms,TRUE,<p>We're currently in the early phase of using LaunchDarkly across all of Cvent as a commercial version of our experiments platform. We expect to begin broader rollout in 2024.</p>
+Lerna,Hold,Tools,FALSE,<p>A tool for managing mono-repositories. Cvent has moved towards pnpm as the tool of choice for this since it replaces npm/yarn and lerna in one tool</p>
+Maven,Adopt,Tools,FALSE,<p>The primary java build tool for managing dependencies and various build/deploy best practices at Cvent</p>
+Micro Frontends,Assess,Techniques,FALSE,<p>Micro frontends is a technique that brings some of the advantages of microservices to the frontend. We're experimenting with various methods that allow us to leverage this technique where appropriate. We've also looked into tools like bit.dev as a mechanism for managing this across the enterprise</p>
+Micronaut,Hold,languages-and-frameworks,FALSE,<p>We've chosen spring boot as go forward in 2024.</p>
+Microservices,Adopt,Techniques,FALSE,<p>Microservices is an architectural pattern where an application is broken up into discrete mini applications that can be built/deployed independentley and share nothing. This allows each component to be well understood, scaled, and modified independently from other teams</p>,,
+Mono Repositories,Adopt,Techniques,FALSE,<p>Mono repositories is a technique that allows a group of related components to all be developed in a single code repository. This often allows for easier maintenance of releases between related components and can provide significant boosts in productivity for teams. Cvent has several mono-repositories like (nucleus, carina, nx, mono-java and other mini mono repositories for various products)</p>,
+Monoliths,Hold,Techniques,FALSE,<p>Monoliths is an architectural pattern that normally involves a single application artifact and code repository. All development happens on the same artifact and the artifact gets deployed as a single unit. This is often a very efficient method for deliverying software when there's a limited number of teams with limited complexity. As the # of teams grow and the complexity increases it starts to hurt productivity. There are many other tradeoffs with this architectural style. At Cvent we recommend moving towards the microservice architectural pattern</p>
+MS SQL Server,Hold,Platforms,FALSE,<p>MS SQL Server is one of the largest databases we use at Cvent today and is the primary relational database used behind large parts of app.cvent.com and related components. However, as we evolve we're putting a hold on continued expansion and use of this database as we prefer our relational databases move to AWS Aurora</p>,,,
+New Relic,Hold,Platforms,FALSE,<p>New Relic has primarily been an APM and browser tool that we've leveraged over the years to gain performance insights, errors and synthetic monitoring. As datadog has expanded it's capabilities we plan to migrate over time from New Relic to Datadog to unify under a single platform</p>,,,
+NextJS,Adopt,languages-and-frameworks,FALSE,<p>NextJS is the core web application framework that ships as part of CDF</p>
+Nexus,Adopt,Platforms,FALSE,<p>Nexus is our artifact repository as it acts like a cache/proxy to the rest of the internet</p>
+npm,Hold,Tools,FALSE,<p>NPM has been deprecated in favor of pnpm. There's a few primary reasons for this. 1) speed 2) mono repos</p>
+Nrwl/Nx,Adopt,Tools,FALSE,<p>Nx (https://nx.dev/) is a build system designed to operate monorepos at scale. It adds computational caching and a host of other useful features to prevent the need to run every package in the monorepo every time.</p>
+Nucleus,Adopt,languages-and-frameworks,FALSE,<p>A set of shared UI packages for building products</p>
+Objective C,Hold,languages-and-frameworks,FALSE,<p>Use Swift instead</p>
+Octopus,Adopt,Platforms,FALSE,<p>Our primary deployment orchestrator for staging and above</p>
+oktaws,Adopt,Tools,FALSE,<p>oktaws is a cli tool that authenticates via okta federation. We're preferring this tool over cvent-aws-cli because it works with all AWS SDKs</p>
+Open API,Adopt,Tools,FALSE,<p>Open API is how we define specifications for all our REST apis. It allows us to define a clear contract (request/response) for all our services to help with integration, test automation and clarity</p>,,,
+Oracle,Hold,Platforms,FALSE,<p>Oracle is another database leveraged heavily by Passkey, Conference and Business Transient product lines. However, as we continue to evolve we want to limit our investment in expanding the use of this database and leverage AWS Aurora</p>,,
+Phrase App,Adopt,languages-and-frameworks,FALSE,<p>A localization framework we're leveraging to localize our products</p>
+pitest,Adopt,Tools,FALSE,<p>A tool that helps you identify good tests from bad tests. This helps you avoid teams building tests that simply get code coverage without real test assertions</p>
+Playwright,Trial,Tools,TRUE,<p>Playwrite is a test automation framework we're using for end to end testing of our web applications</p>
+pnpm,Adopt,Tools,FALSE,<p>The build tool used by node projects and mono-repositories at Cvent.</p>
+Postman,Hold,Tools,FALSE,<p>We leverage postman as a tool for developing/testing APIs adhoc. Recent pricing changes & security concerns has pushed us away from using this going forward.</p>
+Prisma,Hold,languages-and-frameworks,FALSE,<p>Prisma is an interesting ORM that works well with graphql + typescript but has several short comings when it comes to how it handles transactions and joins. Prisma also uses a sidecar process to execute queries that severely hinders observability tools like Datadog. The side car process complicates connection pooling and IAM authentication and the sql generated is un friendly to RDS Proxy making it an unsuitable tool for serverless deployments. The approach we've taken to handle IAM results in memory leaks. For this reason we’re putting this technology on Hold and looking for alternatives.</p>
+Python,Trial,languages-and-frameworks,FALSE,<p>Python is primarily used for scripting, data science and lambda functions where appropriate but the preference is to use TypeScript where possible</p>,,,
+Quarkus,Hold,languages-and-frameworks,FALSE,<p>We've chosen spring boot as go forward in 2024.</p>
+RabbitMQ,Hold,Platforms,FALSE,<p>We prefer that teams now use modern cloud native serverless messaging systems around our event driven architecture.</p>
+Rancher Desktop,Adopt,Tools,TRUE,<p>We use rancher desktop to run containers on our local machines.</p>
+RAML,Hold,Tools,FALSE,<p>RAML is an api definition format for REST services. RAML is comparable to OpenAPI. We've consolidated our api definition language on Open API as it seems to have become the industry standard</p>
+React Native,Adopt,languages-and-frameworks,FALSE,<p>Our primary UI framework for mobile</p>
+react-testing-library,Adopt,Tools,FALSE,<p>The defacto standard tool for React unit testing</p>
+ReactJS,Adopt,languages-and-frameworks,FALSE,<p>Our primary UI framework for the web</p>
+Release Bot,Adopt,Tools,FALSE,<p>The release bot is a slack bot that helps us manage the queue of software changes that are going to production. This helps us coordinate who's next in line and avoids several changes happening at exactly the same time which often make it difficult to diagnose the exact cause of a failure</p>
+Renovate,Adopt,Tools,FALSE,<p>An automation tool we're leveraging to help us maintain our software automatically</p>
+Request for comments (RFCs),Adopt,Techniques,FALSE,<p>RFC is a process (and a wiki template) for putting together an idea or initiative to gather feedback from others.</p>
+Retrospectives,Adopt,Techniques,FALSE,<p>Cvent utilizes retrospectives to learn/improve. We have retrospectives on incidents, sprints, projects to help gain insights from the team</p>,,
+Ruby On Rails,Hold,languages-and-frameworks,FALSE,<p>A framework for building ruby web applications and services. This is currently leveraged by CrowdCompass to deliver the backend components for one of our mobile products</p>
+Ruby,Hold,languages-and-frameworks,FALSE,<p>A dynamic scripting language currently leveraged by CrowdCompass to deliver the backend components for one of our mobile products</p>
+Rust,Assess,languages-and-frameworks,FALSE,<p>We've began experimenting/learning Rust on tools like hogan cli, oktaws cli, hogan server to help with performance efficiency.</p>,,
+Scala,Hold,languages-and-frameworks,FALSE,<p>Used as a DSL for gatling load tests today but should generally stay close to primary languages of Java/TypeScript when possible</p>
+Serverless.com,Hold,Tools,FALSE,<p>We experimented with serverless.com early on as way to manage our adoption of serverless on AWS. While it worked well for prototyping, it failed when it comes to security/compliance and flexibility. Instead, we've deferred to leveraging AWS CDK</p>,,
+Single Page Applications,Adopt,Techniques,FALSE,<p>Single Page Applications (or SPA) is an architectural pattern where you load an applications UI once and then mutate state of the application on the fly without reloading the application. This is normally done by having the UI make API calls to the backend to change state or retrieve new data. At Cvent, many of our ReactJS applications follow this pattern. Gmail is a good example of an external SPA</p>,,,
+Site Designer,Adopt,languages-and-frameworks,FALSE,<p>A framework for exposing customizable web applications to end users based on Nucleus</p>
+Snowflake,Adopt,Platforms,FALSE,<p>Snowflake is a database used for business + product data combined as part of a data lake used by multiple business functions at Cvent.</p>
+Sonar,Adopt,Platforms,FALSE,<p>Sonar is a code quality tool we leverage to provide insights into the health of our code (quality, test code coverage, security vulnerabilities, bugs)</p>,
+Splunk,Hold,Platforms,FALSE,<p>Splunk continues to be used as part of security tooling at Cvent but we've migrated to Datadog for all application specific logging.</p>
+Spring Boot,Trial,languages-and-frameworks,TRUE,<p>A modern microservices framework we're beginning to use in 2024 as a replacement for Dropwizard</p>
+Swagger,Hold,Tools,FALSE,<p>Swagger is an api definition format for REST services. Swagger is comparable to RAML and is really the first version of OpenAPI. We've consolidated our api definition language on Open API</p>
+Swift,Adopt,languages-and-frameworks,FALSE,<p>Swift is used when we need native capabilities on iOS that isn't supported by React Native</p>
+TailwindCSS,Adopt,languages-and-frameworks,TRUE,<p>Tailwind CSS is a utility-based CSS framework, designed to rapidly develop modern websites. With Tailwind, developers can seamlessly build web applications without having to leave their HTML, making styling more efficient and streamlined. We are exploring the possibility of integrating Tailwind as our primary framework for application styling. </p>,
+Terraform,Hold,Tools,FALSE,<p>Terraform is another infrastructure as code platform provided by hashicorp. We've decided to leverage AWS native services where possible since it really doesn't provide any value over what cloudformation/cdk provides. We also would rather not learn a new custom DSL</p>
+TypeScript,Adopt,languages-and-frameworks,FALSE,<p>TypeScript is where we're putting a lot of our investment (React, CDK, NextJS). We're encouraging all developers to learn this language and are adopting this as our default language for many components within our technology stack</p>,,
+Vormetric,Hold,Platforms,FALSE,<p>Vormetric is the platform we leverage for encryption of data at rest and field level encryption.</p>
+webdriver.io,Adopt,Tools,FALSE,<p>webdriver.io is the test automation framework we're using for end to end tests. We prefer this framework because it supports selenium and chromium based workflows that allow for speed as well as comprehensive coverage across all the browsers that our products support</p>
+Whitesource,Adopt,Platforms,FALSE,<p>Whitesource is another tool we're leveraging to scan our dependencies, licenses, docker images and more.</p>,,
+yarn,Hold,Tools,FALSE,<p>Yarn has been deprecated in favor of pnpm. There's a few primary reasons for this. 1) speed 2) yarn2 breaking changes 3) mono repos</p>
