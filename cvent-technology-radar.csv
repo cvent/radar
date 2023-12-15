@@ -27,7 +27,7 @@ AWS ECS/EC2,Adopt,Platforms,FALSE,"<p>Our primary docker container orchestration
 AWS ECS/Fargate,Adopt,Platforms,FALSE,"<p>We're in the phase of trying out Fargate as our primary docker container orchestration platform. This should allow us to reduce costs as well as easing the burden of maintaining several clusters across Cvent. CDF applications are deployed to Fargate.</p>"
 AWS Elasticache,Adopt,Platforms,FALSE,"<p>We leverage Elasticache/redis in our CDF applications and other places as a fast cache. This can be used to replace many use cases of Couchbase at Cvent.</p>"
 AWS EMR,Trial,Platforms,FALSE,"<p>EMR is a service we're experimenting with as part of the data dev team</p>"
-AWS EventBridge,Atopt,Platforms,FALSE,"<p>Event Bridge is now a key part of our event driven architecture at Cvent.</p>"
+AWS EventBridge,Adopt,Platforms,FALSE,"<p>Event Bridge is now a key part of our event driven architecture at Cvent.</p>"
 AWS Kinesis Video Streams,Hold,Platforms,FALSE,"<p>KVS is a video streaming component of Kinesis that helps with streaming of video. We've began investigating how this service could be useful throughout our attendee hub product lines</p>"
 AWS Kinesis,Assess,Platforms,FALSE,"<p>Kinesis is a streaming platform that we're experimenting with in order to stream data from point A to point B, C, D</p>"
 AWS Lakeformation,Trial,Platforms,FALSE,"<p>Lakeformation is a service we're experimenting with as part of the data dev team</p>"
