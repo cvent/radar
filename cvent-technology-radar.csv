@@ -78,7 +78,7 @@ Dropwizard,Hold,languages-and-frameworks,FALSE,"<p>This was our primary microser
 Elasticsearch,Hold,Platforms,FALSE,"<p>See AWS OpenSearch Service as we've deprecated our use of running Elasticsearch ourselves on EC2.</p>"
 enzyme,Hold,Tools,FALSE,"<p>Enzyme is widely at Cvent for React unit testing but it has been poorly maintained for several years and looks unlikely to ever support React past version 17</p>"
 Gatling,Adopt,Tools,FALSE,"<p>Gatling is a load testing tool that we leverage to perform load testing of all our microservices</p>"
-GitHub Actions,Adopt,Tools,TRUE,"<p>We're looking to migrate more CI/CD tooling over to GitHub Actions as we look to replace many uses of our internal Jenkins farm.</p>"
+GitHub Actions,Trial,Tools,TRUE,"<p>We're looking to migrate more CI/CD tooling over to GitHub Actions as we look to replace many uses of our internal Jenkins farm. Some teams are already using these workflows as early adopters.</p>"
 GitHub Copilot,Adopt,Tools,TRUE,"<p>We've started fully adopting Copilot in 2024 to help with developer efficiency.</p>"
 GitHub Enterprise,Adopt,Tools,FALSE,"<p>GitHub is where what we're using for all our source code at Cvent. Migration from Bitbucket started in 2025.</p>"
 GraalVM,Assess,languages-and-frameworks,FALSE,"<p>A new JVM runtime that can be used for fast startup time requirements, interop with multiple languages, cli, serverless and more</p>"
