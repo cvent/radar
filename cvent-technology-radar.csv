@@ -52,8 +52,9 @@ Azure OpenAI,Sustain,Platforms,TRUE,"<p>Azure OpenAI is a platform we are adopti
 Backstage,Adopt,Platforms,FALSE,"<p>Backstage is an extensible developer-portal platform created by Spotify that improves governance, documentation and discovery of our software components.</p>"
 Bash,Hold,languages-and-frameworks,FALSE,<p>A scripting glue language used only as a last resort</p>
 bit.dev,Hold,Platforms,FALSE,<p>We've began investigating bit.dev as a platform for managing all our UI dependencies as part of an end to end component ecosystem to make it easier to manage</p>
-Blucumber,Hold,Tools,FALSE,<p>Blucumber is an internal Cvent tool used for building/running selenium based test automation on our legacy applications. For newer applications we're favoring webdriver.io</p>
-Browser Stack,Hold,Platforms,FALSE,<p>This is the selenium based browser testing platform we use to test/validate multiple browser versions against our products. We've begun moving towards Playwright instead.</p>
+Blucumber,Hold,Tools,FALSE,<p>Blucumber is an internal Cvent tool used for building/running selenium based test automation on our legacy applications. For newer applications we're favoring Playwright</p>
+Browser Stack,Hold,Platforms,FALSE,<p>This is the selenium based browser testing platform we use to test/validate multiple browser versions against our products. We have migrated to TestMu AI (formerly LambdaTest)</p>
+Bruno,Adopt,Tools,FALSE,<p>We leverage Bruno as a tool for testing APIs ad hoc.</p>
 C#,Sustain,languages-and-frameworks,FALSE,"<p>C# is the language used to develop significant parts of app.cvent.com (ie. Normandy, Legacy, Core).</p>"
 Carina,Adopt,languages-and-frameworks,FALSE,<p>The Cvent design system for building beautiful UIs</p>
 CDF,Adopt,languages-and-frameworks,FALSE,"<p>CDF (Cvent Development Framework) is a framework for designing, building, deploying infrastructure, web applications, mobile applications and services at Cvent.</p>"
@@ -93,8 +94,9 @@ JAWS Screen Reader,Adopt,Tools,FALSE,<p>We leverage JAWS as a screen reader for 
 Jenkins,Sustain,Platforms,FALSE,<p>Jenkins is our primary CI/CD tool today but are looking towards GitHub Actions for future.</p>
 Jest,Adopt,Tools,FALSE,<p>Jest is the unit testing tool we use for typescript/javascript based projects at Cvent. We also leverage jest for integration tests when it makes sense</p>
 Junit,Adopt,Tools,FALSE,<p>JUnit is the unit testing tool we use for java projects at Cvent</p>
-Karate,Adopt,Tools,FALSE,<p>Karate is a test automation tool we're leveraging heavily for integration tests of all our REST/GraphQL APIs</p>
+Karate,Adopt,Tools,FALSE,<p>Karate is a test automation tool we're leveraging heavily for integration tests of all our REST. JUnit is also an option for integration testing</p>
 Kotlin,Adopt,languages-and-frameworks,FALSE,<p>Kotlin is used when we need native capabilities on Android that isn't supported by React Native</p>
+LambdaTest,Adopt,Tools,FALSE,<p>Cloud-based cross-browser testing platform for running automated and manual tests at scale on real and virtual devices. Replacement for Browser Stack</p>
 LanceDB,Assess,Platforms,TRUE,<p>LancdDB is a new database technology that we're using to build AI applications in a cost-efficient manner.</p>
 Launch Darkly,Adopt,Platforms,TRUE,<p>We've aquired an enterprise wide license for Launch Darkly in 2024 and are hoping to have full rollout/migration complete by end of 2025 away from experiments.</p>
 Lerna,Hold,Tools,FALSE,<p>A tool for managing mono-repositories. Cvent has moved towards pnpm as the tool of choice for this since it replaces npm/yarn and lerna in one tool</p>
@@ -128,7 +130,7 @@ Phrase App,Adopt,languages-and-frameworks,FALSE,<p>A localization framework we'r
 pitest,Adopt,Tools,FALSE,<p>A tool that helps you identify good tests from bad tests. This helps you avoid teams building tests that simply get code coverage without real test assertions</p>
 Playwright,Adopt,Tools,FALSE,<p>Playwright is a test automation framework we're using for end to end testing of our web applications</p>
 pnpm,Adopt,Tools,FALSE,<p>The build tool used by node projects and mono-repositories at Cvent.</p>
-Postman,Hold,Tools,FALSE,<p>We leverage postman as a tool for developing/testing APIs adhoc. Recent pricing changes & security concerns has pushed us away from using this going forward.</p>
+Postman,Hold,Tools,FALSE,<p>We leverage Postman as a tool for developing/testing APIs ad hoc. Recent pricing changes & security concerns has pushed us away from using this going forward. Bruno is the recommended tool for the ad-hoc API testing</p>
 Prisma,Hold,languages-and-frameworks,FALSE,<p>Prisma is an interesting ORM that works well with graphql + typescript but has several short comings when it comes to how it handles transactions and joins. Prisma also uses a sidecar process to execute queries that severely hinders observability tools like Datadog. The side car process complicates connection pooling and IAM authentication and the sql generated is un friendly to RDS Proxy making it an unsuitable tool for serverless deployments. The approach we've taken to handle IAM results in memory leaks. For this reason we’re putting this technology on Hold and looking for alternatives.</p>
 Python,Hold,languages-and-frameworks,FALSE,"<p>Python is primarily used for scripting, data science and lambda functions where appropriate but the preference is to use TypeScript where possible</p>"
 Quarkus,Hold,languages-and-frameworks,FALSE,<p>We've chosen spring boot as go forward in 2024.</p>
@@ -145,7 +147,7 @@ Retrospectives,Adopt,Techniques,FALSE,"<p>Cvent utilizes retrospectives to learn
 Ruby,Hold,languages-and-frameworks,FALSE,<p>A dynamic scripting language currently leveraged by CrowdCompass to deliver the backend components for one of our mobile products</p>
 Ruby On Rails,Hold,languages-and-frameworks,FALSE,<p>A framework for building ruby web applications and services. This is currently leveraged by CrowdCompass to deliver the backend components for one of our mobile products</p>
 Rust,Assess,languages-and-frameworks,FALSE,"<p>We've began experimenting/learning Rust on tools like hogan cli, oktaws cli, hogan server to help with performance efficiency.</p>"
-Scala,Hold,languages-and-frameworks,FALSE,<p>Used as a DSL for gatling load tests today but should generally stay close to primary languages of Java/TypeScript when possible</p>
+Scala,Hold,languages-and-frameworks,FALSE,<p>Used as a DSL for the older version of Gatling load tests but should generally stay close to primary languages of Java/TypeScript when possible</p>
 Serverless.com,Hold,Tools,FALSE,"<p>We experimented with serverless.com early on as way to manage our adoption of serverless on AWS. While it worked well for prototyping, it failed when it comes to security/compliance and flexibility. Instead, we've deferred to leveraging AWS CDK</p>"
 Single Page Applications,Adopt,Techniques,FALSE,"<p>Single Page Applications (or SPA) is an architectural pattern where you load an applications UI once and then mutate state of the application on the fly without reloading the application. This is normally done by having the UI make API calls to the backend to change state or retrieve new data. At Cvent, many of our ReactJS applications follow this pattern. Gmail is a good example of an external SPA</p>"
 Site Designer,Adopt,languages-and-frameworks,FALSE,<p>A framework for exposing customizable web applications to end users based on Nucleus</p>
@@ -162,7 +164,7 @@ Trunk-based development,Adopt,Techniques,FALSE,<p>PRs against mainline with reli
 TypeScript,Adopt,languages-and-frameworks,FALSE,"<p>TypeScript is where we're putting a lot of our investment (React, CDK, NextJS). We're encouraging all developers to learn this language and are adopting this as our default language for many components within our technology stack</p>"
 Vercel AI SDK,Adopt,languages-and-frameworks,TRUE,<p>Vercel AI SDK is a framework for building AI applications. We are exploring its capabilities to enhance our development processes and product offerings.</p>
 Vormetric,Hold,Platforms,FALSE,<p>Vormetric is the platform we leverage for encryption of data at rest and field level encryption.</p>
-webdriver.io,Adopt,Tools,FALSE,<p>webdriver.io is the test automation framework we're using for end to end tests. We prefer this framework because it supports selenium and chromium based workflows that allow for speed as well as comprehensive coverage across all the browsers that our products support</p>
+webdriver.io,Adopt,Tools,FALSE,<p>Webdriver.io is an end-to-end test automation framework currently supported by our CDF alongside Playwright. While it continues to be available, our preferred framework going forward is Playwright due to improved reliability, performance, and broader modern browser/device coverage.</p>
 Whitesource,Hold,Platforms,FALSE,"<p>Whitesource is another tool we're leveraging to scan our dependencies, licenses, docker images and more.</p>"
 Wiz.io,Adopt,Platforms,TRUE,"<p>A security platform used to enable security, dev, and devops across Cvent.</p>"
 yarn,Hold,Tools,FALSE,<p>Yarn has been deprecated in favor of pnpm. There's a few primary reasons for this. 1) speed 2) yarn2 breaking changes 3) mono repos</p>
