@@ -1,6 +1,7 @@
 name,ring,quadrant,isNew,description
 .Net Core,Sustain,languages-and-frameworks,FALSE,<p>A modern runtime for .Net that can run on windows/linux/docker.</p>
 Agile,Adopt,Techniques,FALSE,"<p>Cvent has been an agile software development company for years. We have teams building software following scrum, kanban and a variety of methods depending on the need</p>"
+AI Evals,Adopt,Techniques,FALSE,"<P>Systematic evaluation of LLM outputs (AI Agent or chatbot response) using curated test suites and metrics to ensure reliability and safety.</p>"
 apex.sh,Hold,Tools,FALSE,"<p>We experimented with apex early on as way to manage our adoption of serverless on AWS. While it worked well for prototyping, it failed when it comes to security/compliance and flexibility. Instead, we've deferred to leveraging AWS CDK</p>"
 API First Design,Adopt,Techniques,FALSE,<p>Cvent believes strongly in API First Design because it allows for iteration during the design phase. Getting the interface correct is the most important part of software development/design. We expect all APIs development to spend most of their time at this phase of development.</p>
 Apollo,Adopt,languages-and-frameworks,FALSE,<p>Apollo is the core graphql framework that ships as part of CDF</p>
@@ -58,6 +59,7 @@ Bruno,Adopt,Tools,FALSE,<p>We leverage Bruno as a tool for testing APIs ad hoc.<
 C#,Sustain,languages-and-frameworks,FALSE,"<p>C# is the language used to develop significant parts of app.cvent.com (ie. Normandy, Legacy, Core).</p>"
 Carina,Adopt,languages-and-frameworks,FALSE,<p>The Cvent design system for building beautiful UIs</p>
 CDF,Adopt,languages-and-frameworks,FALSE,"<p>CDF (Cvent Development Framework) is a framework for designing, building, deploying infrastructure, web applications, mobile applications and services at Cvent.</p>"
+CDF Synthetic,Assess,Techniques,TRUE,"<P>Reuses existing CDF e2e and API product tests as production synthetics to simulate key user flows and monitor critical endpoints across regions.</p>"
 cfn-lint,Adopt,Tools,FALSE,<p>The cfn-lint tool allows us to enforce best practices and security rules around all our cloudformation infrastructure as code. This tool is mandated by our build/deploy pipelines (CDK or native cloudformation)</p>
 Checkmarx,Hold,Platforms,FALSE,<p>Checkmarx is a tool we leverage to scan our source code during CI/CD for security vulnerabilities</p>
 Chef,Sustain,Platforms,FALSE,<p>Chef is the configuration managment tool we leverage to configure/install software throughout Cvent. Overtime we're slowly starting to replace Chef with pre-baked AMIs and immutable infrastructure</p>
@@ -94,12 +96,13 @@ JAWS Screen Reader,Adopt,Tools,FALSE,<p>We leverage JAWS as a screen reader for 
 Jenkins,Sustain,Platforms,FALSE,<p>Jenkins is our primary CI/CD tool today but are looking towards GitHub Actions for future.</p>
 Jest,Adopt,Tools,FALSE,<p>Jest is the unit testing tool we use for typescript/javascript based projects at Cvent. We also leverage jest for integration tests when it makes sense</p>
 Junit,Adopt,Tools,FALSE,<p>JUnit is the unit testing tool we use for java projects at Cvent</p>
-Karate,Adopt,Tools,FALSE,<p>Karate is a test automation tool we're leveraging heavily for integration tests of all our REST. JUnit is also an option for integration testing</p>
+Karate,Sustain,Tools,FALSE,<p>Karate is a test automation tool we're leveraging heavily for integration tests of all our REST. JUnit is also an option for integration testing</p>
 Kotlin,Adopt,languages-and-frameworks,FALSE,<p>Kotlin is used when we need native capabilities on Android that isn't supported by React Native</p>
 LambdaTest,Adopt,Tools,FALSE,<p>Cloud-based cross-browser testing platform for running automated and manual tests at scale on real and virtual devices. Replacement for Browser Stack</p>
 LanceDB,Assess,Platforms,TRUE,<p>LancdDB is a new database technology that we're using to build AI applications in a cost-efficient manner.</p>
 Launch Darkly,Adopt,Platforms,TRUE,<p>We've aquired an enterprise wide license for Launch Darkly in 2024 and are hoping to have full rollout/migration complete by end of 2025 away from experiments.</p>
 Lerna,Hold,Tools,FALSE,<p>A tool for managing mono-repositories. Cvent has moved towards pnpm as the tool of choice for this since it replaces npm/yarn and lerna in one tool</p>
+LLM as a Judge,Adopt,Techniques,FALSE,"<P>Use of LLMs(large language models) to automatically review, score, and explain test outcomes or artifacts for faster quality feedback</p>"
 Mastra.ai,Assess, languages-and-frameworks, TRUE," ""<p>Mastra.ai is a framework for building AI applications. We are currently assessing its capabilities and potential benefits for our development processes.</p>"""
 Maven,Adopt,Tools,FALSE,<p>The primary java build tool for managing dependencies and various build/deploy best practices at Cvent</p>
 Mermaid.js,Adopt,Tools,FALSE,<p>A programmatic flowcharting and diagramming tool.</p>
@@ -114,6 +117,7 @@ Model Context Protocol,Assess,languages-and-frameworks,TRUE,<p>Model Context Pro
 Mono Repositories,Adopt,Techniques,FALSE,"<p>Mono repositories is a technique that allows a group of related components to all be developed in a single code repository. This often allows for easier maintenance of releases between related components and can provide significant boosts in productivity for teams. Cvent has several mono-repositories like (nucleus, carina, nx, mono-java and other mini mono repositories for various products)</p>"
 Monoliths,Hold,Techniques,FALSE,<p>Monoliths is an architectural pattern that normally involves a single application artifact and code repository. All development happens on the same artifact and the artifact gets deployed as a single unit. This is often a very efficient method for deliverying software when there's a limited number of teams with limited complexity. As the # of teams grow and the complexity increases it starts to hurt productivity. There are many other tradeoffs with this architectural style. At Cvent we recommend moving towards the microservice architectural pattern</p>
 MS SQL Server,Sustain,Platforms,FALSE,"<p>MS SQL Server is one of the largest databases we use at Cvent today and is the primary relational database used behind large parts of app.cvent.com and related components. However, as we evolve we're putting a hold on continued expansion and use of this database as we prefer our relational databases move to AWS Aurora</p>"
+Mutation Testing,Assess,Techniques,FALSE,"<P>Technique that injects code mutations to evaluate and strengthen test suite effectiveness beyond simple coverage metrics</p>"
 New Relic,Hold,Platforms,FALSE,"<p>New Relic has primarily been an APM and browser tool that we've leveraged over the years to gain performance insights, errors and synthetic monitoring. As datadog has expanded it's capabilities we plan to migrate over time from New Relic to Datadog to unify under a single platform</p>"
 NextJS,Adopt,languages-and-frameworks,FALSE,<p>NextJS is the core web application framework that ships as part of CDF</p>
 Nexus,Adopt,Platforms,FALSE,<p>Nexus is our artifact repository as it acts like a cache/proxy to the rest of the internet</p>
